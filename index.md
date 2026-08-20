@@ -1,14 +1,14 @@
-# Nandini Patel
-### Computer Science @ Columbia University
+# N
+### Computer Science @ X
 **Specializing in AI/ML, Full-Stack Development, and Systems Engineering**
 
 ---
 
 ## 🚀 About Me
-I am a senior at Columbia University's School of General Studies. My work focuses on building ethically transparent AI and high-performance applications. 
+I am a X. My work focuses on building ethically transparent AI and high-performance applications. 
 
-* **Education:** B.A. in Computer Science, Columbia University (Expected 2026)
-* **Interests:** Indian History & Civilization, Art History, and Yoga/Pilates.
+* **Education:** X
+* **Interests:** Indian History & Civilization, Art & Architecture, and Dance.
 
 ---
 
