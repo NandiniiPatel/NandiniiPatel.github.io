@@ -28,8 +28,8 @@
   --olive: #74793f;
   --olive-deep: #565a2c;
 
-  --glass: rgba(255, 250, 240, 0.55);
-  --glass-strong: rgba(255, 250, 240, 0.82);
+  --glass: rgba(255, 250, 240, 0.74);
+  --glass-strong: rgba(255, 250, 240, 0.88);
   --glass-border: rgba(255, 255, 255, 0.6);
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -71,11 +71,11 @@ body::before {
   inset: 0;
   z-index: -1;
   background-image:
-    radial-gradient(ellipse at 8% 8%, rgba(122, 34, 51, 0.26), transparent 46%),
-    radial-gradient(ellipse at 85% 6%, rgba(201, 69, 122, 0.22), transparent 44%),
-    radial-gradient(ellipse at 92% 82%, rgba(217, 122, 55, 0.22), transparent 46%),
-    radial-gradient(ellipse at 10% 88%, rgba(156, 175, 136, 0.24), transparent 46%),
-    radial-gradient(ellipse at 52% 46%, rgba(201, 151, 31, 0.12), transparent 55%);
+    radial-gradient(circle at 8% 10%, rgba(122, 34, 51, 0.58) 0%, rgba(122, 34, 51, 0.3) 40%, transparent 68%),
+    radial-gradient(circle at 88% 6%, rgba(201, 69, 122, 0.52) 0%, rgba(201, 69, 122, 0.24) 40%, transparent 66%),
+    radial-gradient(circle at 92% 86%, rgba(217, 122, 55, 0.52) 0%, rgba(217, 122, 55, 0.26) 42%, transparent 68%),
+    radial-gradient(circle at 6% 88%, rgba(156, 175, 136, 0.5) 0%, rgba(156, 175, 136, 0.24) 42%, transparent 68%),
+    radial-gradient(circle at 50% 46%, rgba(201, 151, 31, 0.34) 0%, rgba(201, 151, 31, 0.14) 45%, transparent 70%);
   background-color: var(--cream);
 }
 
@@ -285,10 +285,16 @@ body::before {
   font-size: clamp(2.75rem, 9vw, 5.5rem);
 }
 
+/* ---------- One-page anchor sections: offset scroll target below sticky nav ---------- */
+#top, #about, #skills, #projects, #contact {
+  scroll-margin-top: var(--nav-h);
+}
+
 /* ---------- Cards / panels: frosted glass ---------- */
 .panel {
   border-radius: 1.75rem;
   border: 1px solid var(--glass-border);
+  border-top: 5px solid var(--magenta);
   box-shadow: var(--shadow-panel);
   padding: 2rem;
   background-color: var(--glass);
@@ -368,28 +374,18 @@ body::before {
   max-width: 34rem;
 }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.25rem; }
-@media (min-width: 1024px) {
-  .hero-inner { transform: rotate(-1.5deg); }
-}
 
 /* ---- About page ---- */
 .about-grid {
   display: grid;
   gap: 1.75rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   padding-bottom: 5rem;
+  align-items: stretch;
 }
-@media (min-width: 900px) {
-  .about-grid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-  .about-bio { grid-column: 1 / 8; transform: rotate(-1deg); z-index: 2; }
-  .about-edu { grid-column: 7 / 13; margin-top: 3rem; transform: rotate(1.5deg); z-index: 1; }
-  .about-interests { grid-column: 2 / 12; margin-top: -1.5rem; transform: rotate(-0.5deg); z-index: 3; }
-}
-.about-bio { background-image: linear-gradient(160deg, rgba(122, 34, 51, 0.16), transparent 65%); }
-.about-edu { background-image: linear-gradient(160deg, rgba(156, 175, 136, 0.22), transparent 65%); }
-.about-interests { background-image: linear-gradient(160deg, rgba(217, 122, 55, 0.18), transparent 65%); }
+.about-bio { border-top-color: var(--burgundy); }
+.about-edu { border-top-color: var(--sage); }
+.about-interests { border-top-color: var(--orange); }
 .about-bio p, .about-edu p { font-size: 1.15rem; }
 .interest-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
 
@@ -397,68 +393,56 @@ body::before {
 .skills-grid {
   display: grid;
   gap: 1.75rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   padding-bottom: 5rem;
+  align-items: stretch;
 }
-@media (min-width: 900px) {
-  .skills-grid { grid-template-columns: repeat(12, 1fr); }
-  .skill-langs { grid-column: 1 / 7; z-index: 2; }
-  .skill-web { grid-column: 6 / 13; margin-top: 4rem; transform: rotate(1.5deg); z-index: 1; }
-  .skill-graphics { grid-column: 2 / 11; margin-top: -1rem; transform: rotate(-1deg); z-index: 3; }
-}
-.skill-langs { background-image: linear-gradient(160deg, rgba(201, 69, 122, 0.16), transparent 65%); }
-.skill-web { background-image: linear-gradient(160deg, rgba(116, 121, 63, 0.18), transparent 65%); }
-.skill-graphics { background-image: linear-gradient(160deg, rgba(201, 151, 31, 0.16), transparent 65%); }
+.skill-langs { border-top-color: var(--magenta); }
+.skill-web { border-top-color: var(--olive); }
+.skill-graphics { border-top-color: var(--gold); }
 .chip-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.25rem; }
 
 /* ---- Projects page ---- */
 .projects-grid {
   display: grid;
-  gap: 2.25rem;
-  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding-bottom: 5rem;
+  align-items: stretch;
 }
-@media (min-width: 900px) {
-  .projects-grid { grid-template-columns: repeat(6, 1fr); }
-  .project-card:nth-child(1) { grid-column: 1 / 5; transform: rotate(-1.5deg); }
-  .project-card:nth-child(2) { grid-column: 3 / 7; margin-top: 3.5rem; transform: rotate(1deg); }
-  .project-card:nth-child(3) { grid-column: 1 / 6; margin-top: 2rem; transform: rotate(-0.75deg); }
-}
-.project-card:nth-child(1) { background-image: linear-gradient(160deg, rgba(122, 34, 51, 0.16), transparent 65%); }
-.project-card:nth-child(2) { background-image: linear-gradient(160deg, rgba(156, 175, 136, 0.2), transparent 65%); }
-.project-card:nth-child(3) { background-image: linear-gradient(160deg, rgba(217, 122, 55, 0.18), transparent 65%); }
+.project-card:nth-child(1) { border-top-color: var(--burgundy); }
+.project-card:nth-child(2) { border-top-color: var(--sage); }
+.project-card:nth-child(3) { border-top-color: var(--orange); }
 .project-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 0.75rem; }
 .project-card p { font-size: 1.05rem; }
 .project-card .btn { margin-top: 1rem; }
-.project-card:hover { transform: rotate(0deg) scale(1.015); }
+.project-card:hover { transform: translateY(-4px); }
 .project-card { transition: transform 0.25s ease; }
 
 /* ---- Contact page ---- */
 .contact-grid {
   display: grid;
   gap: 1.75rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   padding-bottom: 6rem;
-  max-width: 42rem;
-  margin: 0 auto;
+  align-items: stretch;
 }
 .contact-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
-  flex-wrap: wrap;
 }
-.contact-card:nth-child(1) { transform: rotate(-1deg); background-image: linear-gradient(160deg, rgba(156, 175, 136, 0.2), transparent 65%); }
-.contact-card:nth-child(2) { transform: rotate(0.75deg); background-image: linear-gradient(160deg, rgba(122, 34, 51, 0.16), transparent 65%); }
-.contact-card:nth-child(3) { transform: rotate(-0.5deg); background-image: linear-gradient(160deg, rgba(217, 122, 55, 0.18), transparent 65%); }
+.contact-card:nth-child(1) { border-top-color: var(--sage); }
+.contact-card:nth-child(2) { border-top-color: var(--burgundy); }
+.contact-card:nth-child(3) { border-top-color: var(--orange); }
 .contact-card h2 { font-size: 1.4rem; }
 
 /* ---------- Hero intro panel ---------- */
 .hero-hello {
   max-width: 42rem;
   margin: 0 auto 4rem;
-  background-image: linear-gradient(160deg, rgba(201, 69, 122, 0.14), transparent 65%);
+  border-top-color: var(--magenta);
 }
 .hero-hello h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 0.75rem; color: var(--burgundy); }
 .hero-hello a { color: var(--burgundy); text-decoration: underline; text-underline-offset: 3px; }
