@@ -353,9 +353,8 @@ body::before {
   align-items: stretch;
 }
 .about-bio { border-top-color: var(--burgundy); }
-.about-edu { border-top-color: var(--sage); }
 .about-interests { border-top-color: var(--orange); }
-.about-bio p, .about-edu p { font-size: 1.15rem; }
+.about-bio p { font-size: 1.15rem; }
 .interest-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
 
 /* ---- Skills page ---- */
