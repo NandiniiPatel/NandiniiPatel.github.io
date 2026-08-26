@@ -354,21 +354,72 @@ p { margin: 0 0 1em; }
   padding: 2rem 0 4rem;
 }
 .project-card {
+  position: relative;
+  overflow: hidden;
   border-radius: 0.75rem;
   border: 1px solid var(--line);
   background: var(--cream-soft);
   padding: 2rem;
   box-shadow: 0 4px 16px rgba(90, 30, 40, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(90, 30, 40, 0.1); }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(90, 30, 40, 0.1);
+  border-color: var(--gold);
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='rgba(122,34,51,0.35)' stroke-width='1'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z'/%3E%3Cpath d='M20 10 L30 20 L20 30 L10 20 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 40px 40px;
+  -webkit-mask-image: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+  mask-image: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+}
+.project-num {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gold);
+  opacity: 0.6;
+  letter-spacing: 0.03em;
+}
 .project-card h3 {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 600;
   color: var(--burgundy);
   margin-bottom: 0.75rem;
+  padding-right: 2.5rem;
 }
 .project-card p { font-size: 1.02rem; }
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1.25rem;
+}
+.project-tags li {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--olive-deep);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+}
 .project-card .btn { margin-top: 0.5rem; }
 
 /* ---- Contact: inline link row, no card chrome ---- */
