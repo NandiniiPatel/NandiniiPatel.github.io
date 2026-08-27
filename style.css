@@ -288,6 +288,33 @@ p { margin: 0 0 1em; }
   align-items: center;
 }
 .hero-inner { position: relative; z-index: 1; max-width: 46rem; }
+
+/* ---- Hero paisley (kalka) motif ----
+   One-off traditional buta on the empty right side. Actual SVG:
+   teardrop outline, dotted gold beading, tail spiral, radiating
+   fan-lines. Kept quiet so it never competes with the name. */
+.hero-paisley {
+  position: absolute;
+  right: -3%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(44vw, 560px);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.16;
+}
+.hero-paisley .paisley-fan { opacity: 0.55; }
+.hero-paisley .paisley-inner { opacity: 0.5; }
+.hero-paisley .paisley-beads { opacity: 0.85; }
+.hero-paisley .paisley-spiral { opacity: 0.7; }
+
+@media (max-width: 900px) {
+  .hero-paisley { width: 60vw; right: -12%; opacity: 0.1; }
+}
+@media (max-width: 640px) {
+  .hero-paisley { display: none; }
+}
 .hero h1 { font-size: clamp(3rem, 13vw, 8.5rem); margin: 1rem 0; }
 .hero .tagline {
   font-size: clamp(1.05rem, 2.4vw, 1.4rem);

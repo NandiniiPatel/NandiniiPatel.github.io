@@ -29,6 +29,82 @@
 
 <main id="main">
   <section class="hero wrap" id="top">
+    <svg class="hero-paisley" viewBox="0 0 600 780" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="paisleyBody">
+          <path d="M300 760
+                   C 520 700, 582 400, 480 210
+                   C 435 125, 380 95, 350 82
+                   C 320 70, 288 78, 282 108
+                   C 278 130, 296 150, 320 142
+                   C 366 178, 322 300, 262 352
+                   C 196 410, 198 620, 300 760 Z"/>
+        </clipPath>
+      </defs>
+
+      <!-- radiating fan-line texture, clipped to the teardrop body -->
+      <g clip-path="url(#paisleyBody)" stroke="var(--burgundy)" stroke-width="2" class="paisley-fan">
+        <g transform="translate(292,726)">
+          <line y2="-860" transform="rotate(-60)"/>
+          <line y2="-860" transform="rotate(-53)"/>
+          <line y2="-860" transform="rotate(-46)"/>
+          <line y2="-860" transform="rotate(-39)"/>
+          <line y2="-860" transform="rotate(-32)"/>
+          <line y2="-860" transform="rotate(-25)"/>
+          <line y2="-860" transform="rotate(-18)"/>
+          <line y2="-860" transform="rotate(-11)"/>
+          <line y2="-860" transform="rotate(-4)"/>
+          <line y2="-860" transform="rotate(3)"/>
+          <line y2="-860" transform="rotate(10)"/>
+          <line y2="-860" transform="rotate(17)"/>
+          <line y2="-860" transform="rotate(24)"/>
+          <line y2="-860" transform="rotate(31)"/>
+          <line y2="-860" transform="rotate(38)"/>
+          <line y2="-860" transform="rotate(45)"/>
+        </g>
+      </g>
+
+      <!-- inner outline echo -->
+      <path class="paisley-inner" d="M300 760
+               C 520 700, 582 400, 480 210
+               C 435 125, 380 95, 350 82
+               C 320 70, 288 78, 282 108
+               C 278 130, 296 150, 320 142
+               C 366 178, 322 300, 262 352
+               C 196 410, 198 620, 300 760 Z"
+        fill="none" stroke="var(--burgundy)" stroke-width="3"
+        transform="translate(330,430) scale(0.88) translate(-330,-430)"/>
+
+      <!-- main outline -->
+      <path d="M300 760
+               C 520 700, 582 400, 480 210
+               C 435 125, 380 95, 350 82
+               C 320 70, 288 78, 282 108
+               C 278 130, 296 150, 320 142
+               C 366 178, 322 300, 262 352
+               C 196 410, 198 620, 300 760 Z"
+        fill="none" stroke="var(--burgundy)" stroke-width="4"/>
+
+      <!-- beaded / dotted border running just outside the outline -->
+      <path class="paisley-beads" d="M300 760
+               C 520 700, 582 400, 480 210
+               C 435 125, 380 95, 350 82
+               C 320 70, 288 78, 282 108
+               C 278 130, 296 150, 320 142
+               C 366 178, 322 300, 262 352
+               C 196 410, 198 620, 300 760 Z"
+        fill="none" stroke="var(--gold)" stroke-width="7"
+        stroke-linecap="round" stroke-dasharray="0.1 19"
+        transform="translate(330,430) scale(1.055) translate(-330,-430)"/>
+
+      <!-- spiral curl at the tail -->
+      <path class="paisley-spiral" d="M352 108
+               C 392 128, 388 196, 322 206
+               C 268 214, 244 160, 284 132
+               C 312 113, 350 128, 348 162
+               C 347 184, 326 196, 310 184"
+        fill="none" stroke="var(--burgundy)" stroke-width="4" stroke-linecap="round"/>
+    </svg>
     <div class="hero-inner">
       <h1 class="stack-text">Nandini<br>Patel</h1>
       <p class="tagline">Specializing in AI/ML, Full-Stack Development, and Systems Engineering — building ethically transparent AI and high-performance applications.</p>
